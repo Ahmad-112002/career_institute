@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable
 
 import 'package:career_institute/Pages/Dashboard.dart';
+import 'package:career_institute/Pages/Human%20Resource/Employees.dart';
 import 'package:career_institute/Pages/Lead%20Management/All_Leads.dart';
 import 'package:career_institute/Pages/Lead%20Management/Create_Leads_Form.dart';
 import 'package:career_institute/Pages/Lead%20Management/Lead_Follow_UP.dart';
@@ -1207,6 +1208,9 @@ class myDrawer extends StatelessWidget {
                       ),
                       children: [
                         ListTile(
+                          onTap: () {
+                            Get.offAll(() => Employees_Page());
+                          },
                           leading: Icon(
                             Icons.circle,
                             size: 10,
