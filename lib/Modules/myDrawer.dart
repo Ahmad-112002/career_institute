@@ -11,6 +11,7 @@ import 'package:career_institute/Pages/Lead%20Management/Successfully_Enrolled.d
 import 'package:career_institute/Pages/Lead%20Management/Successfully_Registered.dart';
 import 'package:career_institute/Pages/Lead%20Management/Todays_Leads.dart';
 import 'package:career_institute/Pages/Lead%20Management/Transferred_Leads.dart';
+import 'package:career_institute/Startup_initial_Pages/loginPage.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -39,7 +40,7 @@ class myDrawer extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 0.0),
                     child: ListTile(
                       onTap: () {
-                        Get.offAll(Dashboard(),
+                        Get.offAll(() => Dashboard(),
                             transition: Transition.rightToLeftWithFade);
                       },
                       contentPadding: EdgeInsets.symmetric(horizontal: 25),
@@ -96,7 +97,7 @@ class myDrawer extends StatelessWidget {
                         ),
                         ListTile(
                           onTap: () {
-                            Get.offAll(Lead_Follow_UP(),
+                            Get.offAll(() => Lead_Follow_UP(),
                                 transition: Transition.rightToLeftWithFade);
                           },
                           leading: Icon(
@@ -1727,7 +1728,7 @@ class myDrawer extends StatelessWidget {
                       LinearGradient(colors: [Colors.blue, Colors.greenAccent]),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.grey.shade900,
+                        color: Colors.grey.shade600,
                         offset: Offset(0, 5),
                         spreadRadius: 4,
                         blurRadius: 10)
@@ -1768,9 +1769,10 @@ class myDrawer extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
-                              color: Colors.grey.shade600,
-                              spreadRadius: 1,
-                              blurRadius: 2)
+                            color: Colors.grey.shade600,
+                            spreadRadius: 1,
+                            blurRadius: 2,
+                          )
                         ],
                       ),
                       child: Row(
@@ -1817,7 +1819,7 @@ class myDrawer extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            width: 179,
+                            width: 184,
                             height: 200,
                             decoration: BoxDecoration(
                                 color: Colors.white,
@@ -1902,6 +1904,37 @@ class myDrawer extends StatelessWidget {
                             ),
                           )
                         ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 30),
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.offAll(() => Login(),
+                            transition: Transition.rightToLeftWithFade);
+                      },
+                      child: Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 26, 112, 183),
+                            borderRadius: BorderRadius.circular(12),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 8, 41, 90),
+                                spreadRadius: 1,
+                                blurRadius: 2,
+                              )
+                            ]),
+                        child: Center(
+                          child: Text(
+                            'Logout',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ),
                     ),
                   )
